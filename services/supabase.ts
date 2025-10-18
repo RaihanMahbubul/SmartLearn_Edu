@@ -6,7 +6,6 @@ declare global {
     APP_CONFIG: {
       SUPABASE_URL: string;
       SUPABASE_ANON_KEY: string;
-      API_KEY: string;
     }
   }
 }
