@@ -1,7 +1,7 @@
 import React, { useState, useEffect, ChangeEvent, FormEvent } from 'react';
-import { useAuth } from '../context/AuthContext';
-import { supabase } from '../services/supabase';
-import Spinner from '../components/Spinner';
+import { useAuth } from '../context/AuthContext.tsx';
+import { supabase } from '../services/supabase.ts';
+import Spinner from '../components/Spinner.tsx';
 
 const ProfilePage: React.FC = () => {
   const { user, setAuthModalOpen, setAuthModalMessage } = useAuth();

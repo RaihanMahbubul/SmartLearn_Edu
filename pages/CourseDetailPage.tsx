@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { MOCK_COURSES } from '../constants';
-import { Question, CourseProgress, ExamSubmission } from '../types';
-import { getCourseProgress, toggleItemCompletion, calculateProgressPercentage } from '../services/progressService';
-import { addSubmission } from '../services/submissionService';
-import { useAuth } from '../context/AuthContext';
+import { MOCK_COURSES } from '../constants.ts';
+import { Question, CourseProgress, ExamSubmission } from '../types.ts';
+import { getCourseProgress, toggleItemCompletion, calculateProgressPercentage } from '../services/progressService.ts';
+import { addSubmission } from '../services/submissionService.ts';
+import { useAuth } from '../context/AuthContext.tsx';
 
 type Tab = 'videos' | 'materials' | 'feed' | 'exams';
 

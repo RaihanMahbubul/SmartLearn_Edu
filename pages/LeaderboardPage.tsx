@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { getExamLeaderboard } from '../services/examService';
-import { LeaderboardEntry } from '../types';
-import { MOCK_COURSES } from '../constants';
-import Spinner from '../components/Spinner';
+import { getExamLeaderboard } from '../services/examService.ts';
+import { LeaderboardEntry } from '../types.ts';
+import { MOCK_COURSES } from '../constants.ts';
+import Spinner from '../components/Spinner.tsx';
 
 const LeaderboardPage: React.FC = () => {
     const { examId } = useParams<{ examId: string }>();

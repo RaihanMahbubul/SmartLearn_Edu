@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext';
-import { MOCK_COURSES } from '../constants';
-import { getEnrolledCourseIds } from '../services/progressService';
-import CourseCard from '../components/CourseCard';
+import { useAuth } from '../context/AuthContext.tsx';
+import { MOCK_COURSES } from '../constants.ts';
+import { getEnrolledCourseIds } from '../services/progressService.ts';
+import CourseCard from '../components/CourseCard.tsx';
 
 const MyCoursesPage: React.FC = () => {
   const { user, setAuthModalOpen, setAuthModalMessage } = useAuth();

@@ -1,4 +1,4 @@
-import { ExamSubmission } from '../types';
+import { ExamSubmission } from '../types.ts';
 
 const SUBMISSION_STORAGE_KEY = 'smartlearn-submissions';
 

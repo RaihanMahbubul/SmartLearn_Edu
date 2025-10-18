@@ -1,5 +1,5 @@
 
-import { Course } from './types';
+import { Course } from './types.ts';
 
 export const NAV_LINKS = [
   { name: 'Home', path: '/' },

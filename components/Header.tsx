@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { NAV_LINKS } from '../constants';
-import { useAuth } from '../context/AuthContext';
+import { NAV_LINKS } from '../constants.ts';
+import { useAuth } from '../context/AuthContext.tsx';
 
 const Header: React.FC = () => {
   const { user, logout, setAuthModalOpen } = useAuth();

@@ -1,4 +1,4 @@
-import { Course, CourseProgress } from '../types';
+import { Course, CourseProgress } from '../types.ts';
 
 const STORAGE_KEY = 'smartlearn-progress';
 

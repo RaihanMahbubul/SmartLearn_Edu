@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
-import { fetchMotivationalQuote } from '../services/geminiService';
-import Spinner from './Spinner';
+import { fetchMotivationalQuote } from '../services/geminiService.ts';
+import Spinner from './Spinner.tsx';
 
 const QuoteDisplay: React.FC = () => {
   const [quote, setQuote] = useState<string>('');

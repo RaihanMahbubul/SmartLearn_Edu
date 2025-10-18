@@ -1,6 +1,6 @@
 import React, { useState, FormEvent, useEffect } from 'react';
-import { useAuth } from '../context/AuthContext';
-import Spinner from './Spinner';
+import { useAuth } from '../context/AuthContext.tsx';
+import Spinner from './Spinner.tsx';
 
 interface AuthModalProps {
   isOpen: boolean;

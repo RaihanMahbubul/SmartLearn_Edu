@@ -1,17 +1,17 @@
 import React from 'react';
 import { HashRouter, Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import HomePage from './pages/HomePage';
-import CoursesPage from './pages/CoursesPage';
-import CourseDetailPage from './pages/CourseDetailPage';
-import AboutPage from './pages/AboutPage';
-import ContactPage from './pages/ContactPage';
-import MyCoursesPage from './pages/MyCoursesPage';
-import ProfilePage from './pages/ProfilePage';
-import LeaderboardPage from './pages/LeaderboardPage';
-import { AuthProvider, useAuth } from './context/AuthContext';
-import AuthModal from './components/AuthModal';
+import Header from './components/Header.tsx';
+import Footer from './components/Footer.tsx';
+import HomePage from './pages/HomePage.tsx';
+import CoursesPage from './pages/CoursesPage.tsx';
+import CourseDetailPage from './pages/CourseDetailPage.tsx';
+import AboutPage from './pages/AboutPage.tsx';
+import ContactPage from './pages/ContactPage.tsx';
+import MyCoursesPage from './pages/MyCoursesPage.tsx';
+import ProfilePage from './pages/ProfilePage.tsx';
+import LeaderboardPage from './pages/LeaderboardPage.tsx';
+import { AuthProvider, useAuth } from './context/AuthContext.tsx';
+import AuthModal from './components/AuthModal.tsx';
 
 const AppContent: React.FC = () => {
   const { isAuthModalOpen, setAuthModalOpen, authModalMessage, setAuthModalMessage } = useAuth();

@@ -1,5 +1,5 @@
-import { LeaderboardEntry } from '../types';
-import { getSubmissionsForExam } from './submissionService';
+import { LeaderboardEntry } from '../types.ts';
+import { getSubmissionsForExam } from './submissionService.ts';
 
 // Simulate the API endpoint for fetching a leaderboard
 export const getExamLeaderboard = async (examId: string): Promise<LeaderboardEntry[]> => {

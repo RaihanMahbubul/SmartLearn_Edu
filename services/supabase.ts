@@ -16,7 +16,7 @@ if (supabaseUrl && supabaseAnonKey) {
     supabase = {
         auth: {
             getSession: async () => ({ data: { session: null }, error: null }),
-            onAuthStateChange: (_event: AuthChangeEvent, callback: (event: AuthChangeEvent, session: Session | null) => void) => {
+            onAuthStateChange: (callback: (event: AuthChangeEvent, session: Session | null) => void) => {
                 // Immediately call back with a null session to reflect the unauthenticated state.
                 callback('INITIAL_SESSION', null);
                 return { data: { subscription: { unsubscribe: () => {} } } };

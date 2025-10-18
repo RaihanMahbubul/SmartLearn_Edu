@@ -1,7 +1,7 @@
 
 import React from 'react';
-import CourseCard from '../components/CourseCard';
-import { MOCK_COURSES } from '../constants';
+import CourseCard from '../components/CourseCard.tsx';
+import { MOCK_COURSES } from '../constants.ts';
 
 const CoursesPage: React.FC = () => {
   return (

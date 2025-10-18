@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import GitHubHelpModal from './GitHubHelpModal';
+import GitHubHelpModal from './GitHubHelpModal.tsx';
 
 const Footer: React.FC = () => {
   const [isGitHubModalOpen, setGitHubModalOpen] = useState(false);

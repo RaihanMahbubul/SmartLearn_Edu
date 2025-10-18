@@ -1,9 +1,9 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import CourseCard from '../components/CourseCard';
-import QuoteDisplay from '../components/QuoteDisplay';
-import { MOCK_COURSES } from '../constants';
+import CourseCard from '../components/CourseCard.tsx';
+import QuoteDisplay from '../components/QuoteDisplay.tsx';
+import { MOCK_COURSES } from '../constants.ts';
 
 const HomePage: React.FC = () => {
   const featuredCourses = MOCK_COURSES.slice(0, 3);

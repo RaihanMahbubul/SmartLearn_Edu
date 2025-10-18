@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { User } from '@supabase/supabase-js';
-import { supabase } from '../services/supabase';
-import Spinner from '../components/Spinner';
+import { supabase } from '../services/supabase.ts';
+import Spinner from '../components/Spinner.tsx';
 
 interface AuthContextType {
   user: User | null;

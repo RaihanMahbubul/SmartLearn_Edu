@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Course } from '../types';
-import { getCourseProgress, calculateProgressPercentage } from '../services/progressService';
+import { Course } from '../types.ts';
+import { getCourseProgress, calculateProgressPercentage } from '../services/progressService.ts';
 
 interface CourseCardProps {
   course: Course;
