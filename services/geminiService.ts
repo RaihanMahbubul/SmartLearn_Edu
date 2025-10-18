@@ -1,10 +1,11 @@
 import { GoogleGenAI } from "@google/genai";
 
-const API_KEY = process.env.API_KEY;
+const API_KEY = window.APP_CONFIG?.API_KEY;
+const isConfigured = API_KEY && !API_KEY.startsWith('PASTE_YOUR_');
 
 // This function pattern ensures we don't crash on module load if API_KEY is missing.
 const getAiClient = () => {
-    if (!API_KEY) {
+    if (!isConfigured) {
         return null;
     }
     // This will only be called if the API_KEY is present.
@@ -14,7 +15,7 @@ const getAiClient = () => {
 export const fetchMotivationalQuote = async (): Promise<string> => {
   const ai = getAiClient();
   if (!ai) {
-    console.error("API_KEY environment variable not set. Using fallback for quotes.");
+    console.error("Gemini API Key not configured in index.html. Using fallback for quotes.");
     return "The journey of a thousand miles begins with a single step. - Lao Tzu (API key not configured)";
   }
 

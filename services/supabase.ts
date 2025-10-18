@@ -1,16 +1,33 @@
 import { createClient, SupabaseClient, AuthChangeEvent, Session } from '@supabase/supabase-js';
 
-const supabaseUrl = process.env.SUPABASE_URL;
-const supabaseAnonKey = process.env.SUPABASE_ANON_KEY;
+// Extend the Window interface to include our new config object for TypeScript
+declare global {
+  interface Window {
+    APP_CONFIG: {
+      SUPABASE_URL: string;
+      SUPABASE_ANON_KEY: string;
+      API_KEY: string;
+    }
+  }
+}
+
+const supabaseUrl = window.APP_CONFIG?.SUPABASE_URL;
+const supabaseAnonKey = window.APP_CONFIG?.SUPABASE_ANON_KEY;
 
 let supabase: SupabaseClient;
 
-if (supabaseUrl && supabaseAnonKey) {
+// Check if the keys are the placeholder values
+const isConfigured = supabaseUrl && supabaseAnonKey && 
+                   !supabaseUrl.startsWith('PASTE_YOUR_') && 
+                   !supabaseAnonKey.startsWith('PASTE_YOUR_');
+
+
+if (isConfigured) {
     supabase = createClient(supabaseUrl, supabaseAnonKey);
 } else {
-    console.warn("Supabase is not configured. Please provide SUPABASE_URL and SUPABASE_ANON_KEY environment variables. Auth features will be disabled.");
+    console.warn("Supabase is not configured. Please paste your keys into the APP_CONFIG object in index.html. Auth features will be disabled.");
     
-    const notConfiguredError = { name: 'NotConfiguredError', message: "Supabase is not configured on the server." };
+    const notConfiguredError = { name: 'NotConfiguredError', message: "Supabase is not configured. Please check index.html." };
 
     // Provide a comprehensive mock object so the app doesn't crash on undefined method calls.
     supabase = {

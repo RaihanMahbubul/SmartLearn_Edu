@@ -7,6 +7,17 @@
     <title>SmartLearn - AI-Powered Learning Platform</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
+      // --- START CONFIGURATION ---
+      // Paste your API keys here.
+      // 1. Get your Supabase keys from: Project Settings > API
+      // 2. Get your Gemini API key from: https://aistudio.google.com/app/apikey
+      window.APP_CONFIG = {
+        SUPABASE_URL: "PASTE_YOUR_SUPABASE_URL_HERE",
+        SUPABASE_ANON_KEY: "PASTE_YOUR_SUPABASE_ANON_KEY_HERE",
+        API_KEY: "PASTE_YOUR_GEMINI_API_KEY_HERE"
+      };
+      // --- END CONFIGURATION ---
+
       tailwind.config = {
         theme: {
           extend: {
