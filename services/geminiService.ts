@@ -1,6 +1,6 @@
 import { GoogleGenAI } from "@google/genai";
 
-const API_KEY = typeof process !== 'undefined' ? process.env.API_KEY : undefined;
+const API_KEY = process.env.API_KEY;
 
 // This function pattern ensures we don't crash on module load if API_KEY is missing.
 const getAiClient = () => {

@@ -1,7 +1,7 @@
 import { createClient, SupabaseClient, AuthChangeEvent, Session } from '@supabase/supabase-js';
 
-const supabaseUrl = typeof process !== 'undefined' ? process.env.SUPABASE_URL : undefined;
-const supabaseAnonKey = typeof process !== 'undefined' ? process.env.SUPABASE_ANON_KEY : undefined;
+const supabaseUrl = process.env.SUPABASE_URL;
+const supabaseAnonKey = process.env.SUPABASE_ANON_KEY;
 
 let supabase: SupabaseClient;
 
