@@ -1,17 +1,20 @@
-
 import { GoogleGenAI } from "@google/genai";
 
-const API_KEY = process.env.API_KEY;
+const API_KEY = typeof process !== 'undefined' ? process.env.API_KEY : undefined;
 
-if (!API_KEY) {
-  // This will be caught by the calling component, preventing a hard crash.
-  console.error("API_KEY environment variable not set.");
-}
-
-const ai = new GoogleGenAI({ apiKey: API_KEY! });
+// This function pattern ensures we don't crash on module load if API_KEY is missing.
+const getAiClient = () => {
+    if (!API_KEY) {
+        return null;
+    }
+    // This will only be called if the API_KEY is present.
+    return new GoogleGenAI({ apiKey: API_KEY });
+};
 
 export const fetchMotivationalQuote = async (): Promise<string> => {
-  if (!API_KEY) {
+  const ai = getAiClient();
+  if (!ai) {
+    console.error("API_KEY environment variable not set. Using fallback for quotes.");
     return "The journey of a thousand miles begins with a single step. - Lao Tzu (API key not configured)";
   }
 
