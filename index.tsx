@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.tsx';
+import './index.css';
 
 // Wait for the DOM to be fully loaded before trying to render the app
 document.addEventListener('DOMContentLoaded', () => {
